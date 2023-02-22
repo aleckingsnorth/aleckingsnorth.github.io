@@ -1,0 +1,320 @@
+'use strict';
+const MANIFEST = 'flutter-app-manifest';
+const TEMP = 'flutter-temp-cache';
+const CACHE_NAME = 'flutter-app-cache';
+const RESOURCES = {
+  "assets/AssetManifest.json": "3b2971c862e61e642803c21a66fd4d83",
+"assets/FontManifest.json": "659e32c6f8c31a8bd5277c3d98e85683",
+"assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
+"assets/fonts/Mont/Mont-Black.otf": "dbcb2f8542b0ecbdb5309d71b8d66c40",
+"assets/fonts/Mont/Mont-Bold.otf": "482e37260cd688576287f1976e958e0b",
+"assets/fonts/Mont/Mont-Book.otf": "9babe309534f96a0e72cabd66ad59871",
+"assets/fonts/Mont/Mont-ExtraLight.otf": "b97aeb517d5d86a95c4f7f5937199cb0",
+"assets/fonts/Mont/Mont-Hairline.otf": "e027cca10fa0965d08e699e62b001b8d",
+"assets/fonts/Mont/Mont-Heavy.otf": "59087be473660e111a978b2aaf15f39c",
+"assets/fonts/Mont/Mont-Light.otf": "d91cf54a7c557f6c271e16b5046767ac",
+"assets/fonts/Mont/Mont-Regular.otf": "f0f845588eef439ac6ecc9b6ab42191c",
+"assets/fonts/Mont/Mont-SemiBold.otf": "d41a520b1802421f24e21279736e1871",
+"assets/fonts/Mont/Mont-Thin.otf": "1f2050ebcebb851c7fd061dd9be90478",
+"assets/fonts/Poppins/OFL.txt": "69045d03afdf61aeb37246af6001af9c",
+"assets/fonts/Poppins/Poppins-Black.ttf": "0573b9231a8316427ad6e751b52e87a4",
+"assets/fonts/Poppins/Poppins-BlackItalic.ttf": "3fb21c8084013f3d0176bc98bcf76e60",
+"assets/fonts/Poppins/Poppins-Bold.ttf": "a3e0b5f427803a187c1b62c5919196aa",
+"assets/fonts/Poppins/Poppins-BoldItalic.ttf": "09775bde3e9448b38c063b746e21cb6b",
+"assets/fonts/Poppins/Poppins-ExtraBold.ttf": "544fa4f2678a8285eb88b8dfe503c90c",
+"assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf": "29f7dd016eeed2bcd79ba482eb3f27ec",
+"assets/fonts/Poppins/Poppins-ExtraLight.ttf": "86a2f13e91ac85080ebaeaab9463b9f1",
+"assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf": "05139b6509a2baa8f188fbade78fc3ed",
+"assets/fonts/Poppins/Poppins-Italic.ttf": "5e956c44060a7b3c0e39819ae390ab15",
+"assets/fonts/Poppins/Poppins-Light.ttf": "f6ea751e936ade6edcd03a26b8153b4a",
+"assets/fonts/Poppins/Poppins-LightItalic.ttf": "1eaf3af47612e6163a2e27e847c6ac7d",
+"assets/fonts/Poppins/Poppins-Medium.ttf": "f61a4eb27371b7453bf5b12ab3648b9e",
+"assets/fonts/Poppins/Poppins-MediumItalic.ttf": "1749e4b603749026393f64506a3bcbbe",
+"assets/fonts/Poppins/Poppins-Regular.ttf": "8b6af8e5e8324edfd77af8b3b35d7f9c",
+"assets/fonts/Poppins/Poppins-SemiBold.ttf": "4cdacb8f89d588d69e8570edcbe49507",
+"assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf": "378a091bc1b1e6e6d6327beb6bfb07b9",
+"assets/fonts/Poppins/Poppins-Thin.ttf": "25cd0f688f815bc4f6ac2b71eb6278ba",
+"assets/fonts/Poppins/Poppins-ThinItalic.ttf": "c93e22e98b7a8d58f83ce42b278815eb",
+"assets/images/BeefBurger.png": "14e1e74dc9adeb44abd1e89954075eb1",
+"assets/images/BlackSquare.png": "e185f41c014425808fbb8b1554d2d5ad",
+"assets/images/BlackTriangle.png": "cce5cfcb4a22b323164f09c4a65c4253",
+"assets/images/Breast.png": "a48a273846dfd9e878539c8db61ef823",
+"assets/images/Burger.png": "4bb086a9ffcff70e754fb7a56db74fa4",
+"assets/images/Chicken.png": "87a96601b542a0f346fa087ff9689e8b",
+"assets/images/DeepPan.png": "54be197fafd4b5e2f8b5b7ee63f6e6c6",
+"assets/images/FiletMingion.png": "2c344804331ac8de54d3bb6102fed325",
+"assets/images/Fish.png": "4caea73e6bcf7223d1a66fff4301e1b1",
+"assets/images/GrillImage.png": "ebecb4500b028809590fb413e9781880",
+"assets/images/Leg.png": "11f0f6aa90f3ce65e034cc69cee718f0",
+"assets/images/Neopolitan.png": "8be4c8b13d17e57402e23cf96fa0591e",
+"assets/images/Other.png": "69ba219bda87f2f9238b065d99784fce",
+"assets/images/OtherPizza.png": "e75480c7857c7ac26a4b0348177bc4ed",
+"assets/images/Oven.png": "74f0f751c64f96d487bf5518b0411fdc",
+"assets/images/Perfecta.png": "11c80d5951b0f50d1ca3e0ce7dd14f07",
+"assets/images/PizzaImage.png": "1e1ffbc115cd2e0f0234e97b8a2b9fcc",
+"assets/images/RibEye.png": "dc1809f5e3f8f79418703140d5f12c27",
+"assets/images/RotisImage.png": "7378d7887b53aa0cb488c63e30a0ccf8",
+"assets/images/SeerGrill.png": "51938d240c98108ec0dd9abc64f1c47f",
+"assets/images/Sirloin.png": "51095e6207dacf044851d72bddb32682",
+"assets/images/Skewer.png": "a1d7818466ac96b59b30b87c53de2d8b",
+"assets/images/Skirt.png": "4a063b553f01e2ee032226d8878ffbe2",
+"assets/images/SpitRoast.png": "a721c8eb864e732227984a5d98f83d95",
+"assets/images/Steak.png": "a725e06c1d8b4e57c9e22951da9b0786",
+"assets/images/Strip.png": "446e442a1d05088a00b4d113b46e9aca",
+"assets/images/Thigh.png": "7c38fc39c79a6cebf203a4963c5c8a9c",
+"assets/images/ThinCrust.png": "573b10b1516e530ea4cb5d25f395832f",
+"assets/images/Toast.png": "7cd90b1c4b0f85208a1bb8497c932f75",
+"assets/images/Tomahawk.png": "eb29a75750e3bfb98712ed7156bbe150",
+"assets/images/VeggieBurger.png": "e4c8843c875a6bafb3a8415f903dd9cf",
+"assets/images/Wing.png": "ccb439bc52b86a7634bbf8974f420429",
+"assets/NOTICES": "6b1fce99b443a89bcb85d57611fa0bed",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/shaders/ink_sparkle.frag": "ae6c1fd6f6ee6ee952cde379095a8f3f",
+"assets/web/assets/fonts/Mont/Mont-Black.otf": "dbcb2f8542b0ecbdb5309d71b8d66c40",
+"assets/web/assets/fonts/Mont/Mont-Bold.otf": "482e37260cd688576287f1976e958e0b",
+"assets/web/assets/fonts/Mont/Mont-Book.otf": "9babe309534f96a0e72cabd66ad59871",
+"assets/web/assets/fonts/Mont/Mont-ExtraLight.otf": "b97aeb517d5d86a95c4f7f5937199cb0",
+"assets/web/assets/fonts/Mont/Mont-Hairline.otf": "e027cca10fa0965d08e699e62b001b8d",
+"assets/web/assets/fonts/Mont/Mont-Heavy.otf": "59087be473660e111a978b2aaf15f39c",
+"assets/web/assets/fonts/Mont/Mont-Light.otf": "d91cf54a7c557f6c271e16b5046767ac",
+"assets/web/assets/fonts/Mont/Mont-Regular.otf": "f0f845588eef439ac6ecc9b6ab42191c",
+"assets/web/assets/fonts/Mont/Mont-SemiBold.otf": "d41a520b1802421f24e21279736e1871",
+"assets/web/assets/fonts/Mont/Mont-Thin.otf": "1f2050ebcebb851c7fd061dd9be90478",
+"assets/web/assets/fonts/Poppins/OFL.txt": "69045d03afdf61aeb37246af6001af9c",
+"assets/web/assets/fonts/Poppins/Poppins-Black.ttf": "0573b9231a8316427ad6e751b52e87a4",
+"assets/web/assets/fonts/Poppins/Poppins-BlackItalic.ttf": "3fb21c8084013f3d0176bc98bcf76e60",
+"assets/web/assets/fonts/Poppins/Poppins-Bold.ttf": "a3e0b5f427803a187c1b62c5919196aa",
+"assets/web/assets/fonts/Poppins/Poppins-BoldItalic.ttf": "09775bde3e9448b38c063b746e21cb6b",
+"assets/web/assets/fonts/Poppins/Poppins-ExtraBold.ttf": "544fa4f2678a8285eb88b8dfe503c90c",
+"assets/web/assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf": "29f7dd016eeed2bcd79ba482eb3f27ec",
+"assets/web/assets/fonts/Poppins/Poppins-ExtraLight.ttf": "86a2f13e91ac85080ebaeaab9463b9f1",
+"assets/web/assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf": "05139b6509a2baa8f188fbade78fc3ed",
+"assets/web/assets/fonts/Poppins/Poppins-Italic.ttf": "5e956c44060a7b3c0e39819ae390ab15",
+"assets/web/assets/fonts/Poppins/Poppins-Light.ttf": "f6ea751e936ade6edcd03a26b8153b4a",
+"assets/web/assets/fonts/Poppins/Poppins-LightItalic.ttf": "1eaf3af47612e6163a2e27e847c6ac7d",
+"assets/web/assets/fonts/Poppins/Poppins-Medium.ttf": "f61a4eb27371b7453bf5b12ab3648b9e",
+"assets/web/assets/fonts/Poppins/Poppins-MediumItalic.ttf": "1749e4b603749026393f64506a3bcbbe",
+"assets/web/assets/fonts/Poppins/Poppins-Regular.ttf": "8b6af8e5e8324edfd77af8b3b35d7f9c",
+"assets/web/assets/fonts/Poppins/Poppins-SemiBold.ttf": "4cdacb8f89d588d69e8570edcbe49507",
+"assets/web/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf": "378a091bc1b1e6e6d6327beb6bfb07b9",
+"assets/web/assets/fonts/Poppins/Poppins-Thin.ttf": "25cd0f688f815bc4f6ac2b71eb6278ba",
+"assets/web/assets/fonts/Poppins/Poppins-ThinItalic.ttf": "c93e22e98b7a8d58f83ce42b278815eb",
+"assets/web/assets/images/BeefBurger.png": "14e1e74dc9adeb44abd1e89954075eb1",
+"assets/web/assets/images/BlackSquare.png": "e185f41c014425808fbb8b1554d2d5ad",
+"assets/web/assets/images/BlackTriangle.png": "cce5cfcb4a22b323164f09c4a65c4253",
+"assets/web/assets/images/Breast.png": "a48a273846dfd9e878539c8db61ef823",
+"assets/web/assets/images/Burger.png": "4bb086a9ffcff70e754fb7a56db74fa4",
+"assets/web/assets/images/Chicken.png": "87a96601b542a0f346fa087ff9689e8b",
+"assets/web/assets/images/DeepPan.png": "54be197fafd4b5e2f8b5b7ee63f6e6c6",
+"assets/web/assets/images/FiletMingion.png": "2c344804331ac8de54d3bb6102fed325",
+"assets/web/assets/images/Fish.png": "4caea73e6bcf7223d1a66fff4301e1b1",
+"assets/web/assets/images/GrillImage.png": "ebecb4500b028809590fb413e9781880",
+"assets/web/assets/images/Leg.png": "11f0f6aa90f3ce65e034cc69cee718f0",
+"assets/web/assets/images/Neopolitan.png": "8be4c8b13d17e57402e23cf96fa0591e",
+"assets/web/assets/images/Other.png": "69ba219bda87f2f9238b065d99784fce",
+"assets/web/assets/images/OtherPizza.png": "e75480c7857c7ac26a4b0348177bc4ed",
+"assets/web/assets/images/Oven.png": "74f0f751c64f96d487bf5518b0411fdc",
+"assets/web/assets/images/Perfecta.png": "11c80d5951b0f50d1ca3e0ce7dd14f07",
+"assets/web/assets/images/PizzaImage.png": "1e1ffbc115cd2e0f0234e97b8a2b9fcc",
+"assets/web/assets/images/RibEye.png": "dc1809f5e3f8f79418703140d5f12c27",
+"assets/web/assets/images/RotisImage.png": "7378d7887b53aa0cb488c63e30a0ccf8",
+"assets/web/assets/images/SeerGrill.png": "51938d240c98108ec0dd9abc64f1c47f",
+"assets/web/assets/images/Sirloin.png": "51095e6207dacf044851d72bddb32682",
+"assets/web/assets/images/Skewer.png": "a1d7818466ac96b59b30b87c53de2d8b",
+"assets/web/assets/images/Skirt.png": "4a063b553f01e2ee032226d8878ffbe2",
+"assets/web/assets/images/SpitRoast.png": "a721c8eb864e732227984a5d98f83d95",
+"assets/web/assets/images/Steak.png": "a725e06c1d8b4e57c9e22951da9b0786",
+"assets/web/assets/images/Strip.png": "446e442a1d05088a00b4d113b46e9aca",
+"assets/web/assets/images/Thigh.png": "7c38fc39c79a6cebf203a4963c5c8a9c",
+"assets/web/assets/images/ThinCrust.png": "573b10b1516e530ea4cb5d25f395832f",
+"assets/web/assets/images/Toast.png": "7cd90b1c4b0f85208a1bb8497c932f75",
+"assets/web/assets/images/Tomahawk.png": "eb29a75750e3bfb98712ed7156bbe150",
+"assets/web/assets/images/VeggieBurger.png": "e4c8843c875a6bafb3a8415f903dd9cf",
+"assets/web/assets/images/Wing.png": "ccb439bc52b86a7634bbf8974f420429",
+"canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
+"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62",
+"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
+"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
+"favicon.png": "5dcef449791fa27946b3d35ad8803796",
+"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
+"icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
+"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
+"icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
+"icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
+"index.html": "f03af407166d9611c681a49aa0c84906",
+"/": "f03af407166d9611c681a49aa0c84906",
+"main.dart.js": "07fbc6d2296b964a73db73177594bc0c",
+"manifest.json": "4c6556bf8099f3896f9fa48654d7a261",
+"version.json": "0aa052e94d13d29709b22c139a57184f"
+};
+
+// The application shell files that are downloaded before a service worker can
+// start.
+const CORE = [
+  "main.dart.js",
+"index.html",
+"assets/AssetManifest.json",
+"assets/FontManifest.json"];
+// During install, the TEMP cache is populated with the application shell files.
+self.addEventListener("install", (event) => {
+  self.skipWaiting();
+  return event.waitUntil(
+    caches.open(TEMP).then((cache) => {
+      return cache.addAll(
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
+    })
+  );
+});
+
+// During activate, the cache is populated with the temp files downloaded in
+// install. If this service worker is upgrading from one with a saved
+// MANIFEST, then use this to retain unchanged resource files.
+self.addEventListener("activate", function(event) {
+  return event.waitUntil(async function() {
+    try {
+      var contentCache = await caches.open(CACHE_NAME);
+      var tempCache = await caches.open(TEMP);
+      var manifestCache = await caches.open(MANIFEST);
+      var manifest = await manifestCache.match('manifest');
+      // When there is no prior manifest, clear the entire cache.
+      if (!manifest) {
+        await caches.delete(CACHE_NAME);
+        contentCache = await caches.open(CACHE_NAME);
+        for (var request of await tempCache.keys()) {
+          var response = await tempCache.match(request);
+          await contentCache.put(request, response);
+        }
+        await caches.delete(TEMP);
+        // Save the manifest to make future upgrades efficient.
+        await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+        return;
+      }
+      var oldManifest = await manifest.json();
+      var origin = self.location.origin;
+      for (var request of await contentCache.keys()) {
+        var key = request.url.substring(origin.length + 1);
+        if (key == "") {
+          key = "/";
+        }
+        // If a resource from the old manifest is not in the new cache, or if
+        // the MD5 sum has changed, delete it. Otherwise the resource is left
+        // in the cache and can be reused by the new service worker.
+        if (!RESOURCES[key] || RESOURCES[key] != oldManifest[key]) {
+          await contentCache.delete(request);
+        }
+      }
+      // Populate the cache with the app shell TEMP files, potentially overwriting
+      // cache files preserved above.
+      for (var request of await tempCache.keys()) {
+        var response = await tempCache.match(request);
+        await contentCache.put(request, response);
+      }
+      await caches.delete(TEMP);
+      // Save the manifest to make future upgrades efficient.
+      await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+      return;
+    } catch (err) {
+      // On an unhandled exception the state of the cache cannot be guaranteed.
+      console.error('Failed to upgrade service worker: ' + err);
+      await caches.delete(CACHE_NAME);
+      await caches.delete(TEMP);
+      await caches.delete(MANIFEST);
+    }
+  }());
+});
+
+// The fetch handler redirects requests for RESOURCE files to the service
+// worker cache.
+self.addEventListener("fetch", (event) => {
+  if (event.request.method !== 'GET') {
+    return;
+  }
+  var origin = self.location.origin;
+  var key = event.request.url.substring(origin.length + 1);
+  // Redirect URLs to the index.html
+  if (key.indexOf('?v=') != -1) {
+    key = key.split('?v=')[0];
+  }
+  if (event.request.url == origin || event.request.url.startsWith(origin + '/#') || key == '') {
+    key = '/';
+  }
+  // If the URL is not the RESOURCE list then return to signal that the
+  // browser should take over.
+  if (!RESOURCES[key]) {
+    return;
+  }
+  // If the URL is the index.html, perform an online-first request.
+  if (key == '/') {
+    return onlineFirst(event);
+  }
+  event.respondWith(caches.open(CACHE_NAME)
+    .then((cache) =>  {
+      return cache.match(event.request).then((response) => {
+        // Either respond with the cached resource, or perform a fetch and
+        // lazily populate the cache only if the resource was successfully fetched.
+        return response || fetch(event.request).then((response) => {
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
+          return response;
+        });
+      })
+    })
+  );
+});
+
+self.addEventListener('message', (event) => {
+  // SkipWaiting can be used to immediately activate a waiting service worker.
+  // This will also require a page refresh triggered by the main worker.
+  if (event.data === 'skipWaiting') {
+    self.skipWaiting();
+    return;
+  }
+  if (event.data === 'downloadOffline') {
+    downloadOffline();
+    return;
+  }
+});
+
+// Download offline will check the RESOURCES for all files not in the cache
+// and populate them.
+async function downloadOffline() {
+  var resources = [];
+  var contentCache = await caches.open(CACHE_NAME);
+  var currentContent = {};
+  for (var request of await contentCache.keys()) {
+    var key = request.url.substring(origin.length + 1);
+    if (key == "") {
+      key = "/";
+    }
+    currentContent[key] = true;
+  }
+  for (var resourceKey of Object.keys(RESOURCES)) {
+    if (!currentContent[resourceKey]) {
+      resources.push(resourceKey);
+    }
+  }
+  return contentCache.addAll(resources);
+}
+
+// Attempt to download the resource online before falling back to
+// the offline cache.
+function onlineFirst(event) {
+  return event.respondWith(
+    fetch(event.request).then((response) => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        cache.put(event.request, response.clone());
+        return response;
+      });
+    }).catch((error) => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        return cache.match(event.request).then((response) => {
+          if (response != null) {
+            return response;
+          }
+          throw error;
+        });
+      });
+    })
+  );
+}
