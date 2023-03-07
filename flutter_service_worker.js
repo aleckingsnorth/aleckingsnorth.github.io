@@ -3,7 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "3b2971c862e61e642803c21a66fd4d83",
+  "assets/AssetManifest.json": "02b79b8d00ce729bed2286bdca5d7cad",
+"assets/burger.csv": "5fa3da3072da568552283862ada9675e",
+"assets/chicken.csv": "f036b2ee7a994fcf3a603f7b15a528bf",
 "assets/FontManifest.json": "659e32c6f8c31a8bd5277c3d98e85683",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "assets/fonts/Mont/Mont-Black.otf": "dbcb2f8542b0ecbdb5309d71b8d66c40",
@@ -69,7 +71,11 @@ const RESOURCES = {
 "assets/images/Wing.png": "ccb439bc52b86a7634bbf8974f420429",
 "assets/NOTICES": "6b1fce99b443a89bcb85d57611fa0bed",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/pizza.csv": "882eb6f77ff9e486204513d96040e4fa",
 "assets/shaders/ink_sparkle.frag": "ae6c1fd6f6ee6ee952cde379095a8f3f",
+"assets/steak.csv": "55e4f4587fcd7a34821e370a79ae3035",
+"assets/web/assets/burger.csv": "5fa3da3072da568552283862ada9675e",
+"assets/web/assets/chicken.csv": "f036b2ee7a994fcf3a603f7b15a528bf",
 "assets/web/assets/fonts/Mont/Mont-Black.otf": "dbcb2f8542b0ecbdb5309d71b8d66c40",
 "assets/web/assets/fonts/Mont/Mont-Bold.otf": "482e37260cd688576287f1976e958e0b",
 "assets/web/assets/fonts/Mont/Mont-Book.otf": "9babe309534f96a0e72cabd66ad59871",
@@ -131,6 +137,8 @@ const RESOURCES = {
 "assets/web/assets/images/Tomahawk.png": "eb29a75750e3bfb98712ed7156bbe150",
 "assets/web/assets/images/VeggieBurger.png": "e4c8843c875a6bafb3a8415f903dd9cf",
 "assets/web/assets/images/Wing.png": "ccb439bc52b86a7634bbf8974f420429",
+"assets/web/assets/pizza.csv": "882eb6f77ff9e486204513d96040e4fa",
+"assets/web/assets/steak.csv": "55e4f4587fcd7a34821e370a79ae3035",
 "canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
 "canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62",
 "canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
@@ -141,9 +149,9 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "92354afb79264db26c617ab179d1a99e",
-"/": "92354afb79264db26c617ab179d1a99e",
-"main.dart.js": "40781a138e66b9d97c5b42da891fb8f4",
+"index.html": "6534ab0e95372ef1c74a1719ba66e4d3",
+"/": "6534ab0e95372ef1c74a1719ba66e4d3",
+"main.dart.js": "03f46580b0b7e711daf8f1bc40648854",
 "manifest.json": "4c6556bf8099f3896f9fa48654d7a261",
 "version.json": "0aa052e94d13d29709b22c139a57184f"
 };

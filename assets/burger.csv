@@ -1,0 +1,25 @@
+BURGER TYPE,SEAR,THICKNESS INCHES,TIME MINUTES
+Meat,Low,0.25,1.5
+Meat,Low,0.5,1.75
+Meat,Low,0.75,2
+Meat,Low,1,2.25
+Meat,Medium,0.25,1.6
+Meat,Medium,0.5,1.96
+Meat,Medium,0.75,2.4
+Meat,Medium,1,2.8
+Meat,High,0.25,1.8
+Meat,High,0.5,2.16
+Meat,High,0.75,2.6
+Meat,High,1,3
+Veggie,Low,0.25,1.5
+Veggie,Low,0.5,1.75
+Veggie,Low,0.75,2
+Veggie,Low,1,2.25
+Veggie,Medium,0.5,1.96
+Veggie,Medium,0.75,2.4
+Veggie,Medium,1,2.8
+Veggie,High,0.25,1.8
+Veggie,High,0.25,1.6
+Veggie,High,0.5,1.96
+Veggie,High,0.75,2.4
+Veggie,High,1,2.8
